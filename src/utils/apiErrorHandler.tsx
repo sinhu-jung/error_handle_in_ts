@@ -12,13 +12,15 @@ function apiErrorHandler(logicFunc: (...args: any) => unknown | never) {
     if (error instanceof customError) {
       console.error({
         date: `${year}-${month}-${day}`,
-        params: JSON.stringify(args ?? ""),
+        location: window.location.pathname,
+        params: args ?? [],
       });
       console.error(error.stack);
     } else if (error instanceof Error) {
       console.error({
         date: `${year}-${month}-${day}`,
-        params: JSON.stringify(args ?? ""),
+        location: window.location.pathname,
+        params: args ?? [],
       });
       console.error(error.stack);
     }

@@ -10,7 +10,7 @@ function App() {
   const [testData, setTestData] = useState("test");
 
   const testErrorFunc = () => {
-    throw new customError("E001");
+    throw new customError("E002");
   };
 
   const testFunc = apiErrorHandler(testErrorFunc);
@@ -27,7 +27,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => testFunc()}>count is {count}</button>
+        <button onClick={() => testFunc("1", 2, false)}>
+          count is {count}
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
