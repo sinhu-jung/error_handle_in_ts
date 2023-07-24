@@ -9,7 +9,9 @@ function App() {
   const [count, setCount] = useState(0);
   const [testData, setTestData] = useState("test");
 
-  const testErrorFunc = () => {
+  const testErrorFunc = (s: string, n: number, b: boolean) => {
+    console.log(s, n, b);
+
     throw new customError("E001");
   };
 

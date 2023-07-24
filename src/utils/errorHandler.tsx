@@ -8,7 +8,7 @@ export function errorHandler(
   return (...args2: any) => {
     try {
       if (isFunction) {
-        return logicFunc(args2);
+        return logicFunc(...args2);
       } else {
         throw new customError("E001");
       }
