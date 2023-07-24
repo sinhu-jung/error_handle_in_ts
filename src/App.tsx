@@ -10,7 +10,7 @@ function App() {
   const [testData, setTestData] = useState("test");
 
   const testErrorFunc = () => {
-    throw new customError("E002");
+    throw new customError("E001");
   };
 
   const testFunc = apiErrorHandler(testErrorFunc);

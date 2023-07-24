@@ -9,14 +9,7 @@ function apiErrorHandler(logicFunc: (...args: any) => unknown | never) {
     const day = `0${date.getDate()}`.slice(-2);
 
     console.group(funcName);
-    if (error instanceof customError) {
-      console.error({
-        date: `${year}-${month}-${day}`,
-        location: window.location.pathname,
-        params: args ?? [],
-      });
-      console.error(error.stack);
-    } else if (error instanceof Error) {
+    if (error instanceof customError || error instanceof Error) {
       console.error({
         date: `${year}-${month}-${day}`,
         location: window.location.pathname,
