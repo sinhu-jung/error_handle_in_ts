@@ -2,11 +2,7 @@ import { customError } from "./customErrorCase";
 
 export function errorHandler(
   logicFunc: (...args: any) => unknown | never,
-  onError: (funcName: string, args: any, error: unknown) => void = (
-    _,
-    _a,
-    _e
-  ) => {}
+  onError: (funcName: string, args: any, error: unknown) => void
 ) {
   const isFunction = typeof logicFunc === "function";
   return (...args2: any) => {
